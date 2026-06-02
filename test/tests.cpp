@@ -134,15 +134,17 @@ TEST(RopeGapTest, NegativeAddition) {
     EXPECT_NEAR(gap, -1.0 / (2 * PI), EPS);
 }
 
-
 TEST(PoolCostTest, DefaultValues) {
     auto result = calculatePoolCost(3.0, 1.0);
     double expected_concrete_area = PI * (16.0 - 9.0);
     EXPECT_NEAR(result.concrete_area, expected_concrete_area, EPS);
-    EXPECT_NEAR(result.concrete_cost, expected_concrete_area * 1000.0, EPS);
+    EXPECT_NEAR(result.concrete_cost,
+                expected_concrete_area * 1000.0, EPS);
     EXPECT_NEAR(result.fence_length, 2 * PI * 4.0, EPS);
-    EXPECT_NEAR(result.fence_cost, 2 * PI * 4.0 * 2000.0, EPS);
-    EXPECT_NEAR(result.total_cost, result.concrete_cost + result.fence_cost, EPS);
+    EXPECT_NEAR(result.fence_cost,
+                2 * PI * 4.0 * 2000.0, EPS);
+    EXPECT_NEAR(result.total_cost,
+                result.concrete_cost + result.fence_cost, EPS);
 }
 
 TEST(PoolCostTest, ZeroWidthPath) {
@@ -155,8 +157,10 @@ TEST(PoolCostTest, ZeroWidthPath) {
 TEST(PoolCostTest, CustomPrices) {
     auto result = calculatePoolCost(3.0, 1.0, 500.0, 1000.0);
     double expected_concrete_area = PI * 7.0;
-    EXPECT_NEAR(result.concrete_cost, expected_concrete_area * 500.0, EPS);
-    EXPECT_NEAR(result.fence_cost, 2 * PI * 4.0 * 1000.0, EPS);
+    EXPECT_NEAR(result.concrete_cost,
+                expected_concrete_area * 500.0, EPS);
+    EXPECT_NEAR(result.fence_cost,
+                2 * PI * 4.0 * 1000.0, EPS);
 }
 
 TEST(PoolCostTest, LargePool) {

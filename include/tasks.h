@@ -18,7 +18,7 @@ double calculateRopeGap(double radius_earth, double added_length);
 struct PoolCostResult {
     double concrete_area;
     double concrete_cost;
-    double fence_length;      
+    double fence_length;
     double fence_cost;
     double total_cost;
 };

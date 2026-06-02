@@ -26,5 +26,6 @@ PoolCostResult calculatePoolCost(double pool_radius,
     double fence_cost = fence_length * fence_price_per_meter;
     double total_cost = concrete_cost + fence_cost;
 
-    return {concrete_area, concrete_cost, fence_length, fence_cost, total_cost};
+    return {concrete_area, concrete_cost, fence_length, fence_cost,
+            total_cost};
 }

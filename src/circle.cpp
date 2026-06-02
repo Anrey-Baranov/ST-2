@@ -4,7 +4,10 @@
 
 const double PI = 3.14159265358979323846;
 
-Circle::Circle(double radius) : radius_(radius), ference_(2 * PI * radius), area_(PI * radius * radius) {}
+Circle::Circle(double radius)
+    : radius_(radius),
+      ference_(2 * PI * radius),
+      area_(PI * radius * radius) {}
 
 void Circle::updateFromRadius() {
     ference_ = 2 * PI * radius_;
